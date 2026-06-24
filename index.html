@@ -1,11 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Kübra & Selman</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kübra & Selman</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f5f0;
+font-family:'Montserrat',sans-serif;
+color:#5c5147;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px 25px;
+text-align:center;
+position:relative;
+}
+
+h1,h2{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+}
+
+.hero{
+background:
+linear-gradient(rgba(248,245,240,.90),rgba(248,245,240,.90)),
+url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero p{
+letter-spacing:3px;
+font-size:1rem;
+}
+
+.date{
+margin-top:20px;
+font-size:1.4rem;
+}
+
+.divider{
+width:120px;
+height:1px;
+background:#cdbfae;
+margin:25px auto;
+}
+
+.flower-top{
+position:absolute;
+top:0;
+left:0;
+width:180px;
+opacity:.7;
+}
+
+.flower-bottom{
+position:absolute;
+bottom:0;
+right:0;
+width:180px;
+opacity:.7;
+transform:rotate(180deg);
+}
+
+.countdown{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.box{
+background:white;
+padding:15px;
+border-radius:15px;
+min-width:90px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.box span{
+display:block;
+font-size:2rem;
+font-family:'Cormorant Garamond',serif;
+}
+
+.card{
+max-width:700px;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#a8a08f;
+color:white;
+text-decoration:none;
+border-radius:30px;
+}
+
+.footer{
+background:#f2ede6;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.box{
+min-width:75px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Kübra & Selman</h1>
-    <p>26 Eylül 2026</p>
-    <p>Düğün Davetiyemize Hoş Geldiniz ❤️</p>
+
+<section class="hero">
+
+<h1>Kübra & Selman</h1>
+
+<div class="divider"></div>
+
+<p>DÜĞÜN DAVETİYESİ</p>
+
+<div class="date">
+26 Eylül 2026
+</div>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">0</span>
+Gün
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+Saat
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+Dakika
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+Saniye
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>Sevgili Ailemiz ve Dostlarımız</h2>
+
+<div class="divider"></div>
+
+<p>
+Hayatlarımızı birleştirdiğimiz bu özel günümüzde,
+sizleri aramızda görmekten mutluluk duyacağız.
+</p>
+
+<br><br>
+
+<p>
+Sevgiyle...
+</p>
+
+<h2 style="margin-top:15px;">
+Kübra & Selman
+</h2>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>Düğün Günümüz</h2>
+
+<div class="divider"></div>
+
+<p>📅 26 Eylül 2026 Cumartesi</p>
+
+<br>
+
+<p>🕖 Saat bilgisi daha sonra eklenecek</p>
+
+<br>
+
+<p>📍 Mekan bilgisi daha sonra eklenecek</p>
+
+<a href="#" class="button">
+Konuma Git
+</a>
+
+</div>
+
+</section>
+
+<section class="footer">
+
+<h2>Mutluluğumuza Ortak Olduğunuz İçin Teşekkür Ederiz</h2>
+
+<div class="divider"></div>
+
+<p>
+Sizi çok seviyoruz 🤍
+</p>
+
+</section>
+
+<script>
+
+const targetDate = new Date("September 26, 2026 19:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000*60*60*24));
+
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
 </body>
 </html>
